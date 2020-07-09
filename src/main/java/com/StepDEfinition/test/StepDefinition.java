@@ -1,5 +1,8 @@
 package com.StepDEfinition.test;
 
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
 import com.business.test.Business;
 import com.pageobjects.test.PageObj;
 import com.utility.test.CommonMethods;
@@ -10,7 +13,8 @@ import cucumber.api.java.en.When;
 
 public class StepDefinition {
 
-	@Given("^User is on Registration page$")
+	@BeforeTest
+	@Given("^User is on Registration page$")	
 	public void user_is_on_Registration_page() throws InterruptedException {
 		Business.setupbrowser();
 		Thread.sleep(4000);
@@ -50,4 +54,5 @@ public class StepDefinition {
 	public void clicks_on(String Reg) {
 		CommonMethods.clickmethod(PageObj.reg);
 	}
+	
 }
